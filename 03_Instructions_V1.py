@@ -1,6 +1,6 @@
-# Function copied from 01Yes_No_Function_V1 as basis for this functions code which
-# incorperates both yes/no and instructions
-
+"""Function copied from 01Yes_No_Function_V1 as basis for this functions code which
+incorperates both yes/no and instructions
+"""
 # Functions go here...
 
 # Yes/No Checker

@@ -1,6 +1,6 @@
-# LU base component
-# All components added after creation and testing
-
+"""LU Base Component
+All components added after creation and testing
+"""
 # Functions go here...
 
 # Yes/No Checker
