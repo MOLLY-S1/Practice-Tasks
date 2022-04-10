@@ -33,14 +33,29 @@ def instructions():
     print()
     print("The rules of the game will go here")
     print()
-    print("Program Continues")
-    print()
 
-# Main routine
+
+#Number checking function
+def num_check(question, low, high):
+     error = "That was not a valid input\n" \
+             "Please enter a whole number between {} and {}\n".format(low, high)
+
+     while True:
+          try:
+               resonse = int(input(question))
+               if low <= resonse <= high:
+                    return resonse
+               else:
+                    print(error)
+
+          except ValueError:
+               print(error)
+
 
 played_before = yes_no("have you played this game before? :")
 if played_before == "No":
     instructions()
-else:
-    print("Program Continues")
+
+user_balance = num_check("How much would you like to play with? $", 1, 10)
+print(f"You are playing with ${user_balance}")
 

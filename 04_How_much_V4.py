@@ -2,19 +2,22 @@
 Now a function
 """
 
-error = "That was not a valid input\n"
-user_balance = 0
+def num_check(question, low, high):
+     error = "That was not a valid input\n" \
+             "Please enter a whole number between {} and {}\n".format(low, high)
 
-# Continue asking until a valid amount is entered
-while not 1 <= user_balance <= 10:
-     try:
-     # Ask for amount
-          user_balance = int(input("Please enter a whole number between 1 and 10\n"
-                                   "How much would you like to play with $"))
-          print()
+     while True:
+          try:
+               resonse = int(input(question))
+               if low <= resonse <= high:
+                    return resonse
+               else:
+                    print(error)
 
-     except ValueError:
-          print(error)
+          except ValueError:
+               print(error)
 
+#Main Routine
+
+user_balance = num_check("How much would you like to play with? $", 1, 10)
 print(f"You are playing with ${user_balance}")
-
