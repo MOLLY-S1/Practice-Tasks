@@ -1,4 +1,4 @@
-""" Component 3 random token generator V1
+""" Component 3 random token generator V2
 generates random token choice in random order and will calculate the user balance
 """
 import random
