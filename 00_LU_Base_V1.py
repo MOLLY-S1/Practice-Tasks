@@ -25,7 +25,7 @@ def yes_no(question_text):
 
         # Otherwise - show error
         else:
-            print("please enter 'yes' or 'no'")
+            print("please enter 'yes' or 'no'\n")
 
 # Function to display instructions
 def instructions():

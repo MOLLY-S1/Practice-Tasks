@@ -1,4 +1,4 @@
-""" Component 3 random token generator V2
+""" Component 3 random token generator V3
 generates random token choice in random order and will calculate the user balance
 chance of a unicorn will become 10% all else will have a 30% chance
 """
@@ -22,5 +22,8 @@ for item in range(100):
     else:
         balance -= .50
 
-print(f"starting balance:{STARTING_BALANCE:.2f}")
+    print(f"Token:{token} Balance:${balance:.2f}")
+
+
+print(f"\nstarting balance:{STARTING_BALANCE:.2f}")
 print(f"final balance:{balance:.2f}")
