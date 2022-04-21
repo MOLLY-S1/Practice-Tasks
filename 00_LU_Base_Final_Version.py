@@ -1,4 +1,4 @@
-"""LU Base Component V2 based on V1
+"""LU Base Component V3 based on V2
 All components added after creation and testing
 """
 
@@ -35,8 +35,7 @@ def yes_no(question_text):
 def instructions():
     print("*** How To Play ***")
     print()
-    print("\nEach game costs $1\n"
-          "Unicorns give you $4, Donkeys make you lose $1 and both horses and zebras make you lose $0.50\n"
+    print("\nUnicorns give you $4, Donkeys make you lose $1 and both horses and zebras make you lose $0.50\n"
           "Press <enter> to continue playing or 'X' to stop at the end of each round\n"
           "The game will continue until you press 'X' or you run out of money to play with")
     print()
@@ -68,38 +67,36 @@ def generate_token(balance):
     # Testing loop to generate 5 tokens
     while play_again != "x":
         rounds_played += 1  # keep track of rounds
+        print(formatter(".", f"Round {rounds_played}"))
+        print()
         number = random.randint(1, 100)  # Can be any token
 
         # Adjust balance according to the token
         if 1 <= number <= 5:
-            token = "Unicorn"
             balance += 4
             print(formatter("*", "CONGRATULATIONS YOU GOT A UNICORN"))
             print()
 
         elif 6 <= number <= 36:
-            token = "Donkey"
             balance -= 1
-            print(formatter("D", "DONKEY"))
+            print(formatter("D", "You got a DONKEY"))
             print()
 
         else:
              # If even then token is Zebra
             if number % 2 == 0:
-                token = "Zebra"
                 balance -= .50
-                print(formatter("Z", "ZEBRA"))
+                print(formatter("Z", "You got a ZEBRA"))
                 print()
 
             # Otherwise, it will be a Horse
             else:
-                token = "Horse"
                 balance -= .50
-                print(formatter("H", "HORSE"))
+                print(formatter("H", " You got a HORSE"))
                 print()
 
         # Output
-        print(f"Round {rounds_played}. Token: {token}, Balance: ${balance:.2f}")
+        print(f"Round {rounds_played}. Your Balance is: ${balance:.2f}")
         if balance < 1:
             print("\nSorry but you are out of money")
             play_again = "x"
