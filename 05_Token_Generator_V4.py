@@ -11,15 +11,16 @@ balance = STARTING_BALANCE
 # Testing loop to generate 100 tokens
 for item in range(10):
     number = random.randint(1, 100)
-
+# Add $4 for Unicorns
     if  1<= number <=5:
         token = "Unicorn"
         balance += 4
-
+# Lose $1 for Donkeys
     elif 6<= number <= 36:
         token = "Donkey"
         balance -= 1
 
+# Lose $0.5 for all else
     else:
         # If even then token is Zebra
         if number % 2 == 0:
@@ -32,7 +33,8 @@ for item in range(10):
             balance -= .50
 
     # Output
-    print(f"Token:{token} Balance:${balance:.2f}")
+    print(f"Token:{token}, Balance:${balance:.2f}")
 
+print()
 print(f"\nStarting Balance:${STARTING_BALANCE:.2f}")
 print(f"Final Balance:${balance:.2f}")
